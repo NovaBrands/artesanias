@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jabones DIY: Pack 7x1 · Crea & Encanta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush: #FBF2F5;
+    --paper: #FFFFFF;
+    --ink: #3D1F44;
+    --violet: #7A4C8C;
+    --violet-deep: #5A3567;
+    --violet-dark: #3D1F44;
+    --gold: #D9A441;
+    --pink: #F1CFE0;
+    --green: #3E8E5B;
+    --red: #B5495A;
+    --line: rgba(61,31,68,0.13);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family:'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  a{color:inherit;}
+  .wrap{ max-width: 760px; margin:0 auto; padding: 0 24px; }
+
+  /* ---------- hook ---------- */
+  .hook{
+    background: linear-gradient(160deg, var(--violet-deep), var(--violet-dark));
+    color: var(--blush);
+    text-align:center;
+    padding: 56px 24px 60px;
+  }
+  .hook .back{
+    display:inline-block; font-size:0.82rem; color: var(--pink); opacity:0.85;
+    text-decoration:none; margin-bottom: 22px;
+  }
+  .hook .back:hover{ opacity:1; }
+  .hook h1{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+    line-height: 1.18;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hook h1 .gold{ color: var(--gold); }
+  .hook p{
+    margin-top: 18px;
+    font-size: 1rem;
+    opacity: 0.82;
+    max-width: 480px;
+    margin-left:auto; margin-right:auto;
+  }
+
+  /* ---------- benefits ---------- */
+  .benefits{ padding: 56px 0 12px; text-align:center; }
+  .benefits h2{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--violet-deep);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.25;
+  }
+  .benefit-row{
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 26px;
+    text-align:left;
+  }
+  .benefit{
+    background: var(--blush);
+    border-radius: 18px;
+    padding: 26px 20px;
+  }
+  .benefit .icon{ font-size: 1.7rem; }
+  .benefit p{ margin-top: 12px; font-size: 0.92rem; line-height: 1.5; opacity: 0.82; }
+
+  /* ---------- includes ---------- */
+  .includes{ padding: 64px 0; background: var(--blush); }
+  .section-head{ text-align:center; margin-bottom: 36px; }
+  .eyebrow{
+    font-family:'Jost', sans-serif; font-size:0.76rem; font-weight:700;
+    letter-spacing:0.14em; text-transform:uppercase; color: var(--gold);
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size: clamp(1.5rem, 4vw, 2.1rem); color: var(--violet-deep); margin-top:8px;
+  }
+
+  .item-list{ display:flex; flex-direction:column; gap:14px; }
+  .item{
+    display:flex; align-items:center; gap:16px;
+    background: var(--paper);
+    border-radius: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+  }
+  .item .num{
+    width:34px; height:34px; border-radius:50%;
+    background: var(--violet-deep); color: var(--blush);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:0.85rem; flex-shrink:0;
+  }
+  .item.main .num{ background: var(--gold); color: var(--violet-dark); }
+  .item strong{ font-size: 0.98rem; }
+  .item span{ display:block; font-size: 0.82rem; opacity: 0.65; margin-top: 2px; }
+
+  /* ---------- gallery ---------- */
+  .gallery{ padding: 64px 0; text-align:center; }
+  .gallery p.sub{ margin-top:8px; opacity:0.65; font-size:0.95rem; max-width:480px; margin-left:auto; margin-right:auto; }
+  .proj-grid{
+    margin-top: 30px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 16px;
+  }
+  .proj{
+    background: var(--blush);
+    border-radius: 16px;
+    padding: 24px 12px;
+    text-align:center;
+  }
+  .proj .icon{ font-size: 1.8rem; }
+  .proj p{ margin-top:8px; font-size:0.83rem; font-weight:500; color: var(--violet-deep); }
+
+  /* ---------- price ---------- */
+  .price-block{
+    text-align:center;
+    padding: 60px 24px 66px;
+    background: linear-gradient(160deg, var(--violet-deep), var(--violet-dark));
+    color: var(--blush);
+  }
+  .price-block .tag{
+    display:inline-block; font-weight:700; font-size:0.9rem; letter-spacing:0.04em;
+    color: var(--violet-dark); background: var(--gold); padding:6px 18px; border-radius:999px;
+  }
+  .price-new{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size: clamp(2.6rem, 9vw, 3.6rem);
+    color: #7BE0A0;
+    margin-top: 18px;
+  }
+  .price-note{ font-size:0.88rem; opacity:0.75; margin-top:6px; }
+
+  .buy-btn{
+    display:inline-block; margin-top: 26px;
+    font-family:'Jost', sans-serif; font-weight:700; font-size:1.1rem;
+    color: var(--violet-dark);
+    background: linear-gradient(180deg, #FFD873, var(--gold));
+    padding: 17px 44px; border-radius: 999px; text-decoration:none;
+    box-shadow: 0 14px 30px -12px rgba(217,164,65,0.6);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  .buy-btn:hover{ filter: brightness(1.05); }
+  .buy-btn:focus-visible{ outline: 3px solid var(--gold); outline-offset:3px; animation:none; }
+  @keyframes pulse{ 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.06);} }
+
+  .trust{ margin-top:16px; font-size:0.8rem; opacity:0.7; }
+
+  footer{ text-align:center; padding: 44px 24px 56px; }
+  footer a{ font-size:0.88rem; font-weight:500; color: var(--violet-deep); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<section class="hook">
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Volver a Crea &amp; Encanta</a>
+    <h1>Aprendé a elaborar tus propios <span class="gold">jabones artesanales</span> y convertí esa habilidad en un ingreso extra desde tu casa</h1>
+    <p>Un ebook paso a paso pensado para empezar desde cero, sin experiencia previa, con ingredientes fáciles de conseguir.</p>
+  </div>
+</section>
+
+<section class="benefits wrap">
+  <h2>Imaginate poder crear tus propios jabones, cosméticos y regalos artesanales — y hasta vender lo que hacés</h2>
+  <div class="benefit-row">
+    <div class="benefit">
+      <div class="icon">🧼</div>
+      <p>Aprendés técnicas reales de elaboración de jabones desde cero, explicadas paso a paso.</p>
+    </div>
+    <div class="benefit">
+      <div class="icon">🌿</div>
+      <p>Descubrís ingredientes naturales y accesibles, sin necesidad de equipos costosos.</p>
+    </div>
+    <div class="benefit">
+      <div class="icon">💰</div>
+      <p>Sumás una habilidad que podés usar para regalos, uso propio o para emprender.</p>
+    </div>
+  </div>
+</section>
+
+<section class="includes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Qué incluye tu pack</div>
+      <h2>El ebook principal + 6 cursos bonus</h2>
+    </div>
+    <div class="item-list">
+      <div class="item main">
+        <div class="num">★</div>
+        <div><strong>Jabones DIY: De Principiante a Experto</strong><span>El ebook/curso principal, con todo el paso a paso</span></div>
+      </div>
+      <div class="item"><div class="num">1</div><div><strong>Bombas de Baño y Sales</strong><span>Aprendé a crear tus propias bombas efervescentes</span></div></div>
+      <div class="item"><div class="num">2</div><div><strong>Aromaterapia y Aceites Esenciales</strong><span>Combiná aromas para potenciar tus creaciones</span></div></div>
+      <div class="item"><div class="num">3</div><div><strong>Cómo Hacer Aceites de Masaje</strong><span>Recetas simples con ingredientes naturales</span></div></div>
+      <div class="item"><div class="num">4</div><div><strong>Elaborá tus Lip Balm y Cacaos</strong><span>Bálsamos labiales caseros paso a paso</span></div></div>
+      <div class="item"><div class="num">5</div><div><strong>Creá tus Perfumes desde Casa</strong><span>Aprendé a formular tus propias fragancias</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery wrap">
+  <div class="section-head">
+    <div class="eyebrow">Ideas para crear</div>
+    <h2>Todo lo que vas a poder hacer</h2>
+  </div>
+  <p class="sub">Proyectos reales que vas a aprender a elaborar con tu propio pack.</p>
+  <div class="proj-grid">
+    <div class="proj"><div class="icon">🧼</div><p>Jabones artesanales</p></div>
+    <div class="proj"><div class="icon">🛁</div><p>Bombas de baño</p></div>
+    <div class="proj"><div class="icon">💆</div><p>Aceites de masaje</p></div>
+    <div class="proj"><div class="icon">💄</div><p>Lip balm y cacaos</p></div>
+    <div class="proj"><div class="icon">🌸</div><p>Perfumes caseros</p></div>
+    <div class="proj"><div class="icon">🕯️</div><p>Aromaterapia</p></div>
+  </div>
+</section>
+
+<section class="price-block">
+  <div class="wrap">
+    <span class="tag">Pack completo · 7 en 1</span>
+    <div class="price-new">$21.99</div>
+    <p class="price-note">Único pago · Acceso de por vida</p>
+    <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=8edd" target="_blank" rel="noopener">Comprar Ahora</a>
+    <p class="trust">Pago 100% seguro · Acceso inmediato por correo</p>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html">Ver los demás cursos de Crea &amp; Encanta</a>
+</footer>
+
+</body>
+</html>
