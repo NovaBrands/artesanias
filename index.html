@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jabones DIY: Pack 7x1 · Crea & Encanta</title>
+<title>Crea & Encanta · Cursos, ebooks y manualidades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --blush: #FBF2F5;
@@ -18,239 +18,316 @@
     --gold: #D9A441;
     --pink: #F1CFE0;
     --green: #3E8E5B;
-    --red: #B5495A;
     --line: rgba(61,31,68,0.13);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    background: var(--paper);
+    background: var(--blush);
     color: var(--ink);
     font-family:'Jost', sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
   }
   @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
   }
   a{color:inherit;}
-  .wrap{ max-width: 760px; margin:0 auto; padding: 0 24px; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
 
-  /* ---------- hook ---------- */
-  .hook{
-    background: linear-gradient(160deg, var(--violet-deep), var(--violet-dark));
-    color: var(--blush);
-    text-align:center;
-    padding: 56px 24px 60px;
-  }
-  .hook .back{
-    display:inline-block; font-size:0.82rem; color: var(--pink); opacity:0.85;
-    text-decoration:none; margin-bottom: 22px;
-  }
-  .hook .back:hover{ opacity:1; }
-  .hook h1{
-    font-family:'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(1.7rem, 5vw, 2.5rem);
-    line-height: 1.18;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .hook h1 .gold{ color: var(--gold); }
-  .hook p{
-    margin-top: 18px;
-    font-size: 1rem;
-    opacity: 0.82;
-    max-width: 480px;
-    margin-left:auto; margin-right:auto;
-  }
+  .sparkle-field{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+  .sparkle-field svg{ position:absolute; }
 
-  /* ---------- benefits ---------- */
-  .benefits{ padding: 56px 0 12px; text-align:center; }
-  .benefits h2{
+  header{ position:relative; padding: 70px 0 50px; text-align:center; overflow:hidden; }
+  .mark{ width:64px; height:64px; margin:0 auto 16px; display:block; }
+  .brand-title{
     font-family:'Fraunces', serif; font-weight:600;
-    font-size: clamp(1.4rem, 4vw, 1.9rem);
-    color: var(--violet-deep);
-    max-width: 560px;
-    margin: 0 auto;
-    line-height: 1.25;
+    font-size: clamp(2.5rem, 7.5vw, 4.3rem); line-height:1.02;
+    color: var(--violet-deep); letter-spacing: -0.01em;
   }
-  .benefit-row{
-    margin-top: 40px;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 26px;
-    text-align:left;
+  .brand-title .amp{ color: var(--gold); font-style: italic; font-weight:500; }
+  .tagline{
+    font-size: clamp(1rem, 2.2vw, 1.15rem); opacity: 0.72;
+    max-width: 520px; margin: 14px auto 0; line-height: 1.5;
   }
-  .benefit{
-    background: var(--blush);
-    border-radius: 18px;
-    padding: 26px 20px;
+  .pillars{ display:flex; justify-content:center; gap:34px; flex-wrap:wrap; margin-top:46px; }
+  .pillar{ width:168px; text-align:center; }
+  .pillar .icon{
+    width:54px; height:54px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto 12px; font-size:1.35rem;
   }
-  .benefit .icon{ font-size: 1.7rem; }
-  .benefit p{ margin-top: 12px; font-size: 0.92rem; line-height: 1.5; opacity: 0.82; }
+  .pillar:nth-child(odd) .icon{ background: var(--pink); }
+  .pillar:nth-child(even) .icon{ background: #E8DDF2; }
+  .pillar h3{
+    font-size:0.86rem; font-weight:600; letter-spacing:0.06em;
+    text-transform:uppercase; color: var(--violet-deep);
+  }
+  .pillar p{ font-size:0.86rem; opacity:0.7; margin-top:4px; line-height:1.35; }
 
-  /* ---------- includes ---------- */
-  .includes{ padding: 64px 0; background: var(--blush); }
-  .section-head{ text-align:center; margin-bottom: 36px; }
+  .banner{ position:relative; margin: 54px auto 0; max-width:720px; padding: 20px; text-align:center; }
+  .banner svg{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+  .banner span{
+    position:relative; z-index:1; font-family:'Caveat', cursive;
+    font-size: clamp(1.4rem, 3.4vw, 1.9rem); color: var(--paper);
+  }
+  .banner .dot{ color: var(--gold); margin:0 8px; }
+
+  /* ---------- courses ---------- */
+  .courses{ padding: 68px 0 60px; }
+  .section-head{ text-align:center; margin-bottom:44px; }
   .eyebrow{
-    font-family:'Jost', sans-serif; font-size:0.76rem; font-weight:700;
-    letter-spacing:0.14em; text-transform:uppercase; color: var(--gold);
+    font-size:0.78rem; font-weight:700; letter-spacing:0.16em;
+    text-transform:uppercase; color: var(--gold);
   }
   .section-head h2{
     font-family:'Fraunces', serif; font-weight:600;
-    font-size: clamp(1.5rem, 4vw, 2.1rem); color: var(--violet-deep); margin-top:8px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--violet-deep); margin-top:8px;
+  }
+  .section-head p{ margin-top:10px; opacity:0.68; max-width:460px; margin-left:auto; margin-right:auto; font-size:0.98rem; }
+
+  .course-list{ display:flex; flex-direction:column; gap:18px; }
+
+  .course{
+    background: var(--paper); border-radius:20px; overflow:hidden;
+    border:1px solid var(--line);
   }
 
-  .item-list{ display:flex; flex-direction:column; gap:14px; }
-  .item{
-    display:flex; align-items:center; gap:16px;
-    background: var(--paper);
-    border-radius: 14px;
-    padding: 16px 18px;
-    border: 1px solid var(--line);
+  .course-summary{
+    display:flex; align-items:center; gap:18px;
+    padding: 18px 22px; cursor:pointer; user-select:none;
+    background:none; border:none; width:100%; text-align:left; font:inherit; color:inherit;
   }
-  .item .num{
-    width:34px; height:34px; border-radius:50%;
-    background: var(--violet-deep); color: var(--blush);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:700; font-size:0.85rem; flex-shrink:0;
+  .course-summary:focus-visible{ outline: 3px solid var(--gold); outline-offset: -3px; }
+  .course-summary .thumb{
+    width:64px; height:64px; border-radius:14px; flex-shrink:0;
+    background: linear-gradient(135deg, var(--pink), #E8DDF2);
+    display:flex; align-items:center; justify-content:center; font-size:1.7rem;
   }
-  .item.main .num{ background: var(--gold); color: var(--violet-dark); }
-  .item strong{ font-size: 0.98rem; }
-  .item span{ display:block; font-size: 0.82rem; opacity: 0.65; margin-top: 2px; }
+  .course-summary .info{ flex:1; min-width:0; }
+  .course-summary h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.12rem; color: var(--violet-deep); }
+  .course-summary .price-line{ font-size:0.86rem; margin-top:3px; }
+  .course-summary .price{ font-weight:600; color: var(--gold); }
+  .course-summary .price-old{ text-decoration:line-through; opacity:0.45; margin-right:6px; }
+  .course-summary .toggle-label{
+    font-size:0.84rem; font-weight:600; color: var(--violet-deep);
+    display:flex; align-items:center; gap:6px; flex-shrink:0;
+  }
+  .course-summary .chevron{ transition: transform 0.25s ease; }
+  .course.open .chevron{ transform: rotate(180deg); }
 
-  /* ---------- gallery ---------- */
-  .gallery{ padding: 64px 0; text-align:center; }
-  .gallery p.sub{ margin-top:8px; opacity:0.65; font-size:0.95rem; max-width:480px; margin-left:auto; margin-right:auto; }
-  .proj-grid{
-    margin-top: 30px;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 16px;
+  .course-panel{
+    max-height:0; overflow:hidden;
+    transition: max-height 0.35s ease;
+    border-top: 1px solid var(--line);
   }
-  .proj{
-    background: var(--blush);
-    border-radius: 16px;
-    padding: 24px 12px;
-    text-align:center;
-  }
-  .proj .icon{ font-size: 1.8rem; }
-  .proj p{ margin-top:8px; font-size:0.83rem; font-weight:500; color: var(--violet-deep); }
+  .course.open .course-panel{ border-top: 1px solid var(--line); }
 
-  /* ---------- price ---------- */
-  .price-block{
-    text-align:center;
-    padding: 60px 24px 66px;
-    background: linear-gradient(160deg, var(--violet-deep), var(--violet-dark));
-    color: var(--blush);
+  .course-panel-inner{ padding: 24px 22px 30px; }
+  .panel-desc{ font-size:0.95rem; line-height:1.6; opacity:0.82; max-width: 620px; }
+
+  .panel-includes{ margin-top: 22px; }
+  .panel-includes h4{
+    font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    color: var(--violet-deep); margin-bottom: 12px;
   }
-  .price-block .tag{
-    display:inline-block; font-weight:700; font-size:0.9rem; letter-spacing:0.04em;
-    color: var(--violet-dark); background: var(--gold); padding:6px 18px; border-radius:999px;
+  .include-item{
+    display:flex; align-items:center; gap:12px;
+    padding: 10px 0; font-size:0.92rem;
+    border-bottom: 1px solid var(--line);
   }
-  .price-new{
-    font-family:'Fraunces', serif; font-weight:600;
-    font-size: clamp(2.6rem, 9vw, 3.6rem);
-    color: #7BE0A0;
-    margin-top: 18px;
+  .include-item:last-child{ border-bottom:none; }
+  .include-item .dot{ width:7px; height:7px; border-radius:50%; background: var(--gold); flex-shrink:0; }
+
+  .panel-cta{
+    margin-top: 26px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+    background: var(--blush); border-radius:16px; padding: 20px;
   }
-  .price-note{ font-size:0.88rem; opacity:0.75; margin-top:6px; }
+  .panel-cta .price-big-wrap{ display:flex; flex-direction:column; }
+  .panel-cta .price-old-big{ font-size:0.9rem; text-decoration:line-through; opacity:0.5; }
+  .panel-cta .price-big{ font-family:'Fraunces', serif; font-weight:600; font-size:1.7rem; color: var(--green); }
+  .panel-cta .note{ font-size:0.78rem; opacity:0.6; margin-top:2px; }
 
   .buy-btn{
-    display:inline-block; margin-top: 26px;
-    font-family:'Jost', sans-serif; font-weight:700; font-size:1.1rem;
+    margin-left:auto;
+    display:inline-block; font-weight:700; font-size:1rem;
     color: var(--violet-dark);
     background: linear-gradient(180deg, #FFD873, var(--gold));
-    padding: 17px 44px; border-radius: 999px; text-decoration:none;
-    box-shadow: 0 14px 30px -12px rgba(217,164,65,0.6);
-    animation: pulse 1.6s ease-in-out infinite;
+    padding: 14px 32px; border-radius: 999px; text-decoration:none;
+    box-shadow: 0 12px 26px -12px rgba(217,164,65,0.6);
+    animation: pulse 1.8s ease-in-out infinite;
   }
   .buy-btn:hover{ filter: brightness(1.05); }
-  .buy-btn:focus-visible{ outline: 3px solid var(--gold); outline-offset:3px; animation:none; }
-  @keyframes pulse{ 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.06);} }
+  .buy-btn:focus-visible{ outline: 3px solid var(--violet-deep); outline-offset:3px; animation:none; }
+  @keyframes pulse{ 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.05);} }
 
-  .trust{ margin-top:16px; font-size:0.8rem; opacity:0.7; }
+  .panel-gallery{ margin-top:26px; display:grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr)); gap:12px; }
+  .panel-gallery .g{ background: var(--blush); border-radius:14px; padding:16px 8px; text-align:center; }
+  .panel-gallery .g .icon{ font-size:1.4rem; }
+  .panel-gallery .g p{ margin-top:6px; font-size:0.78rem; font-weight:500; color: var(--violet-deep); }
 
-  footer{ text-align:center; padding: 44px 24px 56px; }
-  footer a{ font-size:0.88rem; font-weight:500; color: var(--violet-deep); text-decoration:underline; }
+  footer{ margin-top:0; padding:40px 0 46px; background: var(--violet-deep); color: var(--blush); text-align:center; }
+  footer .brand-title{ font-size:1.5rem; color: var(--blush); }
+  footer .amp{ color: var(--gold); }
+  footer .fb-link{
+    display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:0.92rem; font-weight:500;
+    color: var(--blush); text-decoration:none; border-bottom:1px solid rgba(251,242,245,0.4); padding-bottom:2px;
+  }
+  footer .fb-link:hover{ border-color: var(--gold); }
+  footer .fine{ margin-top:26px; font-size:0.78rem; opacity:0.55; }
+
+  @media (max-width: 560px){
+    .pillars{ gap:20px 26px; } .pillar{ width:128px; }
+    .course-summary{ flex-wrap:wrap; }
+    .buy-btn{ margin-left:0; width:100%; text-align:center; }
+  }
 </style>
 </head>
 <body>
 
-<section class="hook">
-  <div class="wrap">
-    <a class="back" href="index.html">&larr; Volver a Crea &amp; Encanta</a>
-    <h1>Aprendé a elaborar tus propios <span class="gold">jabones artesanales</span> y convertí esa habilidad en un ingreso extra desde tu casa</h1>
-    <p>Un ebook paso a paso pensado para empezar desde cero, sin experiencia previa, con ingredientes fáciles de conseguir.</p>
+<header>
+  <div class="sparkle-field" aria-hidden="true">
+    <svg width="18" height="18" style="top:60px; left:12%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#D9A441" opacity="0.7"/></svg>
+    <svg width="14" height="14" style="top:120px; right:10%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#7A4C8C" opacity="0.5"/></svg>
+    <svg width="10" height="10" style="top:30px; right:22%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#D9A441" opacity="0.6"/></svg>
   </div>
-</section>
-
-<section class="benefits wrap">
-  <h2>Imaginate poder crear tus propios jabones, cosméticos y regalos artesanales — y hasta vender lo que hacés</h2>
-  <div class="benefit-row">
-    <div class="benefit">
-      <div class="icon">🧼</div>
-      <p>Aprendés técnicas reales de elaboración de jabones desde cero, explicadas paso a paso.</p>
+  <div class="wrap" style="position:relative;">
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="34" fill="#F1CFE0"/>
+      <path d="M50 24 L55 42 L74 46 L55 50 L50 68 L45 50 L26 46 L45 42Z" fill="#D9A441"/>
+    </svg>
+    <h1 class="brand-title">Crea <span class="amp">&amp;</span> Encanta</h1>
+    <p class="tagline">Un espacio para aprender, crear y transformar tus ideas en proyectos hechos por tus propias manos.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="icon">💎</div><h3>Resina</h3><p>Proyectos creativos</p></div>
+      <div class="pillar"><div class="icon">🎨</div><h3>Artesanales</h3><p>Y manualidades</p></div>
+      <div class="pillar"><div class="icon">📚</div><h3>Ebooks</h3><p>Paso a paso</p></div>
+      <div class="pillar"><div class="icon">🎓</div><h3>Cursos</h3><p>Digitales</p></div>
     </div>
-    <div class="benefit">
-      <div class="icon">🌿</div>
-      <p>Descubrís ingredientes naturales y accesibles, sin necesidad de equipos costosos.</p>
-    </div>
-    <div class="benefit">
-      <div class="icon">💰</div>
-      <p>Sumás una habilidad que podés usar para regalos, uso propio o para emprender.</p>
-    </div>
-  </div>
-</section>
-
-<section class="includes">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Qué incluye tu pack</div>
-      <h2>El ebook principal + 6 cursos bonus</h2>
-    </div>
-    <div class="item-list">
-      <div class="item main">
-        <div class="num">★</div>
-        <div><strong>Jabones DIY: De Principiante a Experto</strong><span>El ebook/curso principal, con todo el paso a paso</span></div>
-      </div>
-      <div class="item"><div class="num">1</div><div><strong>Bombas de Baño y Sales</strong><span>Aprendé a crear tus propias bombas efervescentes</span></div></div>
-      <div class="item"><div class="num">2</div><div><strong>Aromaterapia y Aceites Esenciales</strong><span>Combiná aromas para potenciar tus creaciones</span></div></div>
-      <div class="item"><div class="num">3</div><div><strong>Cómo Hacer Aceites de Masaje</strong><span>Recetas simples con ingredientes naturales</span></div></div>
-      <div class="item"><div class="num">4</div><div><strong>Elaborá tus Lip Balm y Cacaos</strong><span>Bálsamos labiales caseros paso a paso</span></div></div>
-      <div class="item"><div class="num">5</div><div><strong>Creá tus Perfumes desde Casa</strong><span>Aprendé a formular tus propias fragancias</span></div></div>
+    <div class="banner">
+      <svg viewBox="0 0 720 84" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M8,42 C40,10 120,8 200,18 C320,34 420,6 540,14 C630,20 670,10 712,40 C670,70 630,60 540,68 C420,80 320,52 200,64 C120,76 40,74 8,42Z" fill="#7A4C8C"/>
+      </svg>
+      <span>Aprende <i class="dot">•</i> Crea <i class="dot">•</i> Hazlo realidad <i class="dot">✨</i></span>
     </div>
   </div>
-</section>
+</header>
 
-<section class="gallery wrap">
+<main class="courses wrap" id="cursos">
   <div class="section-head">
-    <div class="eyebrow">Ideas para crear</div>
-    <h2>Todo lo que vas a poder hacer</h2>
+    <div class="eyebrow">Cursos y ebooks</div>
+    <h2>Elegí tu próximo proyecto</h2>
+    <p>Tocá un curso para ver todos los detalles y comprarlo.</p>
   </div>
-  <p class="sub">Proyectos reales que vas a aprender a elaborar con tu propio pack.</p>
-  <div class="proj-grid">
-    <div class="proj"><div class="icon">🧼</div><p>Jabones artesanales</p></div>
-    <div class="proj"><div class="icon">🛁</div><p>Bombas de baño</p></div>
-    <div class="proj"><div class="icon">💆</div><p>Aceites de masaje</p></div>
-    <div class="proj"><div class="icon">💄</div><p>Lip balm y cacaos</p></div>
-    <div class="proj"><div class="icon">🌸</div><p>Perfumes caseros</p></div>
-    <div class="proj"><div class="icon">🕯️</div><p>Aromaterapia</p></div>
-  </div>
-</section>
 
-<section class="price-block">
-  <div class="wrap">
-    <span class="tag">Pack completo · 7 en 1</span>
-    <div class="price-new">$21.99</div>
-    <p class="price-note">Único pago · Acceso de por vida</p>
-    <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=8edd" target="_blank" rel="noopener">Comprar Ahora</a>
-    <p class="trust">Pago 100% seguro · Acceso inmediato por correo</p>
+  <div class="course-list">
+
+    <!-- ============ CURSO: RESINA ============ -->
+    <div class="course" id="curso-resina">
+      <button class="course-summary" onclick="toggleCourse('curso-resina')">
+        <div class="thumb">💎</div>
+        <div class="info">
+          <h3>Diseña y Crea con Resina</h3>
+          <div class="price-line"><span class="price-old">$74.00</span><span class="price">$37.00 USD</span></div>
+        </div>
+        <span class="toggle-label">Ver más <svg class="chevron" width="14" height="14" viewBox="0 0 20 20"><path d="M5 8 L10 13 L15 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="course-panel">
+        <div class="course-panel-inner">
+          <p class="panel-desc">Curso online paso a paso para aprender a crear tus propios proyectos en resina desde cero, sin importar tu nivel de experiencia. Acceso de por vida.</p>
+          <div class="panel-gallery">
+            <div class="g"><div class="icon">💍</div><p>Joyería</p></div>
+            <div class="g"><div class="icon">🖼️</div><p>Cuadros y decor</p></div>
+            <div class="g"><div class="icon">🔑</div><p>Llaveros</p></div>
+            <div class="g"><div class="icon">🪞</div><p>Posavasos</p></div>
+            <div class="g"><div class="icon">🕯️</div><p>Piezas artesanales</p></div>
+            <div class="g"><div class="icon">🎁</div><p>Regalos</p></div>
+          </div>
+          <div class="panel-cta">
+            <div class="price-big-wrap">
+              <span class="price-old-big">$74.00</span>
+              <span class="price-big">$37.00</span>
+              <span class="note">Único pago · Acceso de por vida</span>
+            </div>
+            <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=42a4" target="_blank" rel="noopener">Comprar Ahora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CURSO: JABONES ============ -->
+    <div class="course" id="curso-jabones">
+      <button class="course-summary" onclick="toggleCourse('curso-jabones')">
+        <div class="thumb">🧼</div>
+        <div class="info">
+          <h3>Jabones DIY: Pack 7x1</h3>
+          <div class="price-line"><span class="price">$21.99 USD</span></div>
+        </div>
+        <span class="toggle-label">Ver más <svg class="chevron" width="14" height="14" viewBox="0 0 20 20"><path d="M5 8 L10 13 L15 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="course-panel">
+        <div class="course-panel-inner">
+          <p class="panel-desc">Aprendé a elaborar tus propios jabones artesanales desde cero, sin experiencia previa, con ingredientes fáciles de conseguir.</p>
+          <div class="panel-includes">
+            <h4>Incluye</h4>
+            <div class="include-item"><span class="dot"></span>Jabones DIY: De Principiante a Experto (curso principal)</div>
+            <div class="include-item"><span class="dot"></span>Bombas de Baño y Sales</div>
+            <div class="include-item"><span class="dot"></span>Aromaterapia y Aceites Esenciales</div>
+            <div class="include-item"><span class="dot"></span>Cómo Hacer Aceites de Masaje</div>
+            <div class="include-item"><span class="dot"></span>Elaborá tus Lip Balm y Cacaos</div>
+            <div class="include-item"><span class="dot"></span>Creá tus Perfumes desde Casa</div>
+          </div>
+          <div class="panel-cta">
+            <div class="price-big-wrap">
+              <span class="price-big">$21.99</span>
+              <span class="note">Único pago · Acceso de por vida</span>
+            </div>
+            <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=8edd" target="_blank" rel="noopener">Comprar Ahora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      PARA AGREGAR UN CURSO NUEVO: copiá uno de los bloques <div class="course" ...> de arriba completo,
+      pegalo antes de este comentario, cambiá el id (curso-nombre), el emoji, el título, el precio,
+      la descripción, los ítems de "Incluye" o la galería, y el link de "Comprar Ahora".
+    -->
+
   </div>
-</section>
+</main>
 
 <footer>
-  <a href="index.html">Ver los demás cursos de Crea &amp; Encanta</a>
+  <div class="wrap">
+    <h2 class="brand-title">Crea <span class="amp">&amp;</span> Encanta</h2>
+    <a class="fb-link" href="#" target="_blank" rel="noopener">Seguinos en Facebook</a>
+    <p class="fine">© 2026 Crea &amp; Encanta · Aprende. Crea. Hazlo realidad.</p>
+  </div>
 </footer>
+
+<script>
+  function toggleCourse(id){
+    var el = document.getElementById(id);
+    var panel = el.querySelector('.course-panel');
+    var isOpen = el.classList.contains('open');
+
+    document.querySelectorAll('.course.open').forEach(function(c){
+      if(c.id !== id){
+        c.classList.remove('open');
+        c.querySelector('.course-panel').style.maxHeight = null;
+      }
+    });
+
+    if(isOpen){
+      el.classList.remove('open');
+      panel.style.maxHeight = null;
+    } else {
+      el.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+</script>
 
 </body>
 </html>
